@@ -270,3 +270,83 @@ h2 {
     margin-top: 10px;
   }
 }
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Sidebar default */
+.sidebar.desktop {
+  width: 250px;
+}
+
+/* Mobile menu hidden on desktop */
+.mobile-menu {
+  display: none;
+}
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .sidebar.desktop {
+    display: none; /* Hide desktop sidebar on mobile */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #3a3b42;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 999;
+  }
+}
+/* input-box styles */
+.input-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.input-box textarea {
+  flex: 1;
+  resize: none;
+  min-height: 40px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.input-box button {
+  padding: 8px 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  background: #0056b3;
+}
