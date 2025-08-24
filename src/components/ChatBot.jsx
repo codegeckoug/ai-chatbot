@@ -48,7 +48,8 @@ function ChatWindow({ activeChat, conversations, setConversations }) {
   if (!chat) {
     return (
       <div className="chat-window empty">
-        Start a new chat from the sidebar.
+        <h2>what's for today?</h2>
+        <p>Start a new chat from the sidebar.</p>
       </div>
     );
   }

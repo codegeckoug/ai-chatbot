@@ -154,3 +154,14 @@ body {
   cursor: pointer;
   font-size: 14px;
 }
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  color: #6366e9;
+  font-weight: 700;
+  font-size: 50px;
+  font-style: italic;
+}
