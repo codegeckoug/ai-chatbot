@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #1a1a1a;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Main container */
+/* Main container */
+.App {
+  display: flex;
+  height: 100vh;
+  background: #1a1a1a;
+  color: white;
+  overflow: hidden; /* Prevent entire page from scrolling */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: #202123;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+/* Chat window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #252628;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+/* Chat messages container */
+.messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px; /* Space between messages */
+
+  padding: 20px;
+  overflow-y: auto; /* Only this scrolls */
+  scroll-behavior: smooth;
+}
+
+/* Message common styles */
+.message {
+  max-width: 45%; /* Prevents messages from taking too much width */
+  padding: 12px;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+/* Chatbot message (left) */
+
+.message.bot {
+  background: #40414f;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* User message (right) */
+.message.user {
+  background: #6366e9;
+  align-self: flex-end; /* User messages on the right */
+  margin-left: auto; /* Push user messages to the right */
+}
+
+/* Input area */
+.input-area {
+  display: flex;
+  padding: 10px;
+  background: #2c2d31;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: #40414f;
+  color: white;
+  border-radius: 5px;
+}
+
+.input-area button {
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  background: #6366e9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.typing-indicator {
+  font-style: italic;
+  color: gray;
+  margin: 5px;
+}
+.new-chat {
+  background: #6366e9;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+/* Sidebar chat list */
+.chat-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.chat-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2b32;
+  padding: 10px;
+  margin-bottom: 10px; /* Adds spacing between chats */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chat-list li:hover {
+  background: #3a3b42;
+}
+
+.chat-list li.active {
+  background: #6366e9;
+  color: white;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
