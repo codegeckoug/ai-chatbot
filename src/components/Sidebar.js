@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
-function Sidebar({
-  conversations,
-  onNewChat,
-  onDeleteChat,
-  activeChat,
-  setActiveChat,
-}) {
+const Sidebar = ({ onNewChat }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -15,74 +9,31 @@ function Sidebar({
 
   return (
     <>
-      {/* Hamburger button - visible on mobile */}
-      <div className="hamburger" onClick={toggleMenu}>
+      {/* Hamburger Icon (Mobile Only) */}
+      <button className="hamburger" onClick={toggleMenu}>
         ☰
-      </div>
+      </button>
 
-      {/* Sidebar - normal for desktop */}
-      <div className="sidebar desktop">
-        <button className="new-chat" onClick={onNewChat}>
+      {/* Desktop Sidebar */}
+      <aside className="sidebar">
+        <button className="new-chat-btn" onClick={onNewChat}>
           + New Chat
         </button>
-        <ul className="chat-list">
-          {conversations.map((chat) => (
-            <li
-              key={chat.id}
-              className={activeChat === chat.id ? "active" : ""}
-              onClick={() => setActiveChat(chat.id)}
-            >
-              Chat {chat.id}
-              <button
-                className="delete-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onDeleteChat(chat.id);
-                }}
-              >
-                🗑
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
+      </aside>
 
-      {/* Mobile modal menu */}
+      {/* Mobile Sidebar Modal */}
       {isOpen && (
         <div className="mobile-menu">
           <button className="close-btn" onClick={toggleMenu}>
-            ✕
+            ×
           </button>
-          <button className="new-chat" onClick={onNewChat}>
+          <button className="new-chat-btn" onClick={onNewChat}>
             + New Chat
           </button>
-          <ul className="chat-list">
-            {conversations.map((chat) => (
-              <li
-                key={chat.id}
-                className={activeChat === chat.id ? "active" : ""}
-                onClick={() => {
-                  setActiveChat(chat.id);
-                  toggleMenu(); // Close menu after selecting
-                }}
-              >
-                Chat {chat.id}
-                <button
-                  className="delete-btn"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onDeleteChat(chat.id);
-                  }}
-                >
-                  🗑
-                </button>
-              </li>
-            ))}
-          </ul>
         </div>
       )}
     </>
   );
-}
+};
 
 export default Sidebar;
