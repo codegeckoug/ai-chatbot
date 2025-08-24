@@ -165,3 +165,108 @@ h2 {
   font-size: 50px;
   font-style: italic;
 }
+@media (max-width: 1024px) {
+  .App {
+    flex-direction: row;
+  }
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: 150px;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .chat-window {
+    flex: 1;
+    height: calc(100vh - 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    height: 120px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  .message {
+    max-width: 70%;
+    font-size: 14px;
+  }
+  .input-area input {
+    font-size: 14px;
+  }
+  .input-area button {
+    font-size: 14px;
+  }
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Sidebar default */
+.sidebar.desktop {
+  width: 250px;
+}
+
+/* Mobile menu hidden on desktop */
+.mobile-menu {
+  display: none;
+}
+
+/* Responsive rules */
+@media (max-width: 768px) {
+  .sidebar.desktop {
+    display: none; /* Hide desktop sidebar on mobile */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+  }
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #2a2b32;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 999;
+  }
+
+  .mobile-menu .close-btn {
+    background: #6366e9;
+    height: 40px;
+    width: 40px;
+    color: white;
+    border-radius: 50%;
+    display: block;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+  }
+}
