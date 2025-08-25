@@ -403,3 +403,70 @@ h2 {
 .input-box button:hover {
   background: #4a4edc;
 }
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #252628;
+  overflow: hidden;
+  position: relative; /* Important for proper layout */
+}
+
+/* Messages container should not hide input */
+.messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  padding-bottom: 80px; /* Space for input box */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* Input Box (fixed at bottom of viewport, above everything) */
+.input-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  background: #2c2d31;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4);
+  z-index: 2000; /* Ensure it’s always clickable */
+}
+
+.input-box textarea {
+  flex: 1;
+  resize: none;
+  min-height: 40px;
+  padding: 8px;
+  background: #40414f;
+  color: white;
+  border: 1px solid #555;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-box button {
+  padding: 8px 16px;
+  background: #6366e9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  background: #4a4edc;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .messages {
+    padding-bottom: 90px; /* Extra space for input on mobile */
+  }
+}
