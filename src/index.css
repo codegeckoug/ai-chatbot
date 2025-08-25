@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-html,
+/*html,
 body {
   height: 100%;
   width: 100%;
@@ -13,14 +13,30 @@ body {
   overflow: hidden;
 }
 
-/* Main container */
-/* Main container */
+
 .App {
   display: flex;
   height: 100vh;
   background: #1a1a1a;
   color: white;
-  overflow: hidden; /* Prevent entire page from scrolling */
+  overflow: hidden;
+}*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #1a1a1a;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Allow vertical scroll */
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: white;
+  overflow: hidden;
 }
 
 /* Sidebar */
@@ -75,8 +91,8 @@ body {
 /* User message (right) */
 .message.user {
   background: #6366e9;
-  align-self: flex-end; /* User messages on the right */
-  margin-left: auto; /* Push user messages to the right */
+  align-self: flex-end;
+  margin-left: auto;
 }
 
 /* Input area */
@@ -316,7 +332,7 @@ h2 {
   }
 }
 /* input-box styles */
-.input-box {
+/*.input-box {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -349,4 +365,41 @@ h2 {
 
 .input-box button:hover {
   background: #0056b3;
+}*/
+
+.input-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  background: #2c2d31; /* Dark to match theme */
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.input-box textarea {
+  flex: 1;
+  resize: none;
+  min-height: 40px;
+  padding: 8px;
+  background: #40414f;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.input-box button {
+  padding: 8px 16px;
+  background: #6366e9;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  background: #4a4edc;
 }
